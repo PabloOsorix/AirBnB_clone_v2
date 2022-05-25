@@ -25,6 +25,7 @@ def states_cities_list():
     state_list = storage.all(State)
     return render_template('9-states.html', html_list=state_list)
 
+
 @app.route('/states/<id>', strict_slashes=False)
 def state_by_id(id):
     """Display the cities of a state if
