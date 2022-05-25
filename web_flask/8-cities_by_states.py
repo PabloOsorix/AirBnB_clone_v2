@@ -5,9 +5,9 @@ it use storafe from  the storage engine.
 It have 1 route
 (1.route: /cities_by_states)
 """
-from models import storage
 from flask import Flask
 from flask import render_template
+from models import storage
 
 
 app = Flask(__name__)
