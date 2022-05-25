@@ -6,7 +6,7 @@
     <BODY>
         {% if id is defined%}
         {% if id == 0 %}
-        <H1>{{html_state.name}}</H1>
+        <H1>State: {{html_state.name}}</H1>
         <H3>Cities:</H3>
         <UL>
         {% for city in html_state.cities|sort(attribute="name") %}
