@@ -11,7 +11,6 @@ It have 4 routes
 
 from models import State
 from models import storage
-from models import City
 from flask import Flask
 from flask import render_template
 
@@ -20,8 +19,7 @@ app = Flask(__name__)
 
 
 @app.route('/cities_by_states', strict_slashes=False)
-def states_list():
-    state_list = {}
+def states_cities_list():
     state_list = storage.all(State).copy()
     return render_template('8-cities_by_states.html', html_list=state_list)
 
