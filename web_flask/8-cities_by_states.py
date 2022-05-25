@@ -5,8 +5,6 @@ it use storafe from  the storage engine.
 It have 1 route
 (1.route: /cities_by_states)
 """
-
-from models import State
 from models import storage
 from flask import Flask
 from flask import render_template
@@ -19,7 +17,7 @@ app = Flask(__name__)
 def states_cities_list():
     """Display a list of states and cities
     """
-    state_list = storage.all(State).copy()
+    state_list = storage.all('State').copy()
     return render_template('8-cities_by_states.html', html_list=state_list)
 
 
