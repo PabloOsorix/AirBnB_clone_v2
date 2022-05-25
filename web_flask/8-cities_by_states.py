@@ -2,11 +2,8 @@
 """
 Script that starts a Flask web application
 it use storafe from  the storage engine.
-It have 4 routes
-(1.route: /states_list)
-(2. route: H1 tag states)
-(3. route: UL taf list all states)
-(4. route: LI taf description of one state)
+It have 1 route
+(1.route: /cities_by_states)
 """
 
 from models import State
@@ -20,12 +17,15 @@ app = Flask(__name__)
 
 @app.route('/cities_by_states', strict_slashes=False)
 def states_cities_list():
+    """Display a list of states and cities
+    """
     state_list = storage.all(State).copy()
     return render_template('8-cities_by_states.html', html_list=state_list)
 
 
 @app.teardown_appcontext
 def close(exception):
+    """Close currently session"""
     storage.close()
 
 
